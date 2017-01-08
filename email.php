@@ -50,10 +50,12 @@ if (isset($submit) && $submit === "submit") {
     <head>
         <meta charset="UTF-8">
         <title>Email Demo</title>
-        <link rel="stylesheet" href="emailstyle.css">
+        <link rel="stylesheet" href="lib/css/reset.css">
+        <link rel="stylesheet" href="lib/css/grids.css">
+        <link rel="stylesheet" href="lib/css/emailstyle.css">
     </head>
     <body>
-        <form id="contact" action="email.php" method="post"  autocomplete="on">
+        <form id="contact"  class="container" action="email.php" method="post"  autocomplete="on">
 
             <fieldset>
 

@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+.seachBackground {
+    background-color: darkgrey;
+    padding: 20px;
+    margin-top: 20px;
+}
+form {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    background-color: #2e2e2e;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+form label {
+    float: left;
+    display: inline-block;
+    width: 100%;
+    max-width: 150px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: darkgray;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 1.2rem;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 0 10px;
+}
+
+form input {
+    display: inline-block;
+    outline: none;
+    border: none;
+    width: 100%;
+    max-width: 450px;
+    height: 40px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 1.2rem;
+    padding: 0 5px;
+}
+
+form input[type=submit] {
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #999;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #fff;
+    margin-left: 25px;
+}  
+
+form input[type=submit]:hover {
+    background-color: #666;
+}
+
+/* Table CSS Styling */
+.turnOn {
+    display: block;
+}
+.turnOff {
+    display: none;
+}
+#search
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 1.0rem;
+    background: #fff;
+    margin: 45px;
+    width: 100%;
+    width: 800px;
+    border-collapse: collapse;
+    text-align: left;
+    margin: 0 auto;
+}
+#search th
+{
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #039;
+    padding: 10px 8px;
+    border-bottom: 2px solid #6678b1;
+}
+#search td
+{
+    font-size: 1.2rem;
+    color: #669;
+    padding: 9px 8px 0px 8px;
+}
+#search tbody tr:hover td
+{
+    color: #009;
+}

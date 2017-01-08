@@ -25,9 +25,7 @@ if (isset($submit) && $submit === "submit") {
 
     /* Person or people to send email to */
     $message->setTo([
-        'jrpepp@pepster.com' => 'John R. Pepp',
-        'pepster@pepster.com' => 'John Pepp',
-        'jrpepp2014@jrpepp.com' => 'Johnny Pepp'
+        'john.smith@sample.com' => 'John Smith'
     ]);
 
     $message->setSubject($subject); // Subject:

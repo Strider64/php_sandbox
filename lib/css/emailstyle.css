@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e2e2e;
+    padding: 0;
+    margin: 0;
+}
+
+div.header {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    height: 150px;
+    background-color: #ebdb8d;
+    padding: 0;
+    margin: 20px auto;
+}
+
+div.header h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 3.2rem;
+    line-height: 150px;
+    color: #2e2e2e;
+    text-align: center;
+}
+
+form#contact {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+form#contact fieldset {
+    border: 2px solid #2e2e2e;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+form#contact fieldset legend {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 1.4rem;
+    color: #2e2e2e;
+    padding: 0 5px;
+}
+
+form#contact fieldset label {
+    float: left;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    line-height: 40px;
+    background-color: #908181;
+    color: #fff;
+    text-align: right;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+form#contact fieldset input {
+    clear: right;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0rem;
+    background-color: #000000;
+    color: #fff;
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+form#contact fieldset .radioBlock {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+form#contact fieldset input[type=radio] {
+    display: none;
+    margin: 10px;
+}
+
+form#contact fieldset input[type=radio] + label.radioStyle {
+    display: inline-block;
+    width: 33.33333333333%;
+    height: 45px;
+    margin: -2px;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #fff;
+    background-color: #000;
+    border: 2px solid  #999999;
+    line-height: 45px;
+    margin: 10px auto 0 auto;
+}
+
+form#contact fieldset input[type=radio] + label.radioStyle:hover {
+    background-color: #908181;
+    color: #fff;
+}
+
+form#contact fieldset input[type=radio]:checked + label.radioStyle {
+    background-image: none;
+    color: #fff;
+    background-color: #908181;
+}
+
+form#contact fieldset label.textBox {
+    clear: both;
+    text-align: center;
+    border: 2px solid  #000;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+form#contact fieldset textArea#comments {
+    resize: none;
+    border: none;
+    outline: none;
+    clear: both;
+    display: block;
+    width: 100%;
+    max-width: 660px;
+    height: 300px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+form#contact input[type=submit] {
+    outline: none;
+    border: none;
+    float: right;
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+form#contact input[type=submit]:hover {
+    color: #ffa;
+    background-color: #aaa;
+}

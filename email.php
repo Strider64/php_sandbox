@@ -1,6 +1,6 @@
 <?php
 include_once 'vendor/swiftmailer/swiftmailer/lib/swift_required.php';
-include 'config.php';
+include 'lib/includes/connect/config.php';
 $server_name = filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL);
 /* Setup swiftmailer using your email server information */
 if (filter_input(INPUT_SERVER, 'SERVER_NAME', FILTER_SANITIZE_URL) == "localhost") {
@@ -22,12 +22,14 @@ if (isset($submit) && $submit === "submit") {
     $subject = filter_input(INPUT_POST, 'reason', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email_from = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $comments = filter_input(INPUT_POST, 'comments', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
     /* Person or people to send email to */
+    
     $message->setTo([
-        'john.smith@sample.com' => 'John Smith'
+        EMAIL_ADDRESS_ONE => EMAIL_NAME,
+        EMAIL_ADDRESS_TWO => EMAIL_NAME,
+        EMAIL_ADDRESS_THREE => EMAIL_NAME
     ]);
-
+ 
     $message->setSubject($subject); // Subject:
     $message->setBody($comments); // Message:
     $message->setFrom($email_from, $name); // From and Name:
@@ -53,7 +55,7 @@ if (isset($submit) && $submit === "submit") {
         <link rel="stylesheet" href="lib/css/emailstyle.css">
     </head>
     <body>
-        <form id="contact"  class="container" action="email.php" method="post"  autocomplete="on">
+        <form id="contact"  class="container"action="email.php" method="post"  autocomplete="on">
 
             <fieldset>
 

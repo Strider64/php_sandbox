@@ -9,7 +9,8 @@ $sql = <<<EOD
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name VARCHAR(60) NOT NULL,
         title VARCHAR(60) NOT NULL,
-        message TEXT NOT NULL)
+        message TEXT NOT NULL,
+        dateCreated VARCHAR(60) NOT NULL)
 EOD;
 
 $ret = $db->exec($sql);
@@ -38,7 +39,7 @@ $submit = filter_input(INPUT_POST, 'submit');
 
 if (isset($submit) && $submit === "Submit") {
     /* Create a query using prepared statements */
-    $query = 'INSERT INTO mysimpleblog( name, title, message) VALUES ( :name, :title, :message)';
+    $query = 'INSERT INTO mysimpleblog( name, title, message, dateCreated) VALUES ( :name, :title, :message, datetime("now"))';
     /* Prepared the Statement */
     $stmt = $pdo->prepare($query);
     /* Excute the statement with the prepared values */
@@ -55,7 +56,7 @@ if (isset($submit) && $submit === "Submit") {
 /*
  * Setup the query 
  */
-$query = 'SELECT id, name, title, message FROM mysimpleblog ORDER BY id DESC';
+$query = 'SELECT id, name, title, message, dateCreated FROM mysimpleblog ORDER BY id DESC';
 /*
  * Prepare the query 
  */
@@ -75,10 +76,11 @@ $result = $stmt->execute();
         <link rel="stylesheet" href="lib/css/mysimpleblog.css">
     </head>
     <body>
+        <button class="addBlog" onclick="toggleClass('mySimpleBlogForm', 'hideForm');">Add to Blog</button>
         <div id="mySimpleBlogForm" class="container">
             <form id="searchForm" action="mysimpleblog.php" method="post">
                 <label for="name">Name</label>
-                <input id="name"type="text" name="name" value="">
+                <input id="name" type="text" name="name" value="">
                 <label for="title">title</label>
                 <input id="title" type="text" name="title">
                 <label id="labelTextarea"  for="message">Message</label>
@@ -91,11 +93,31 @@ $result = $stmt->execute();
          * Display the output
          */
         while ($record = $stmt->fetch(PDO::FETCH_OBJ)) {
-            echo '<div class = "container mySimpleBlog span6">';
-            echo '<h2>' . $record->title . '<span>by ' . $record->name . ' </span></h2>';
+            echo '<div class = "container mySimpleBlog span5">';
+            $myDate = new DateTime($record->dateCreated);
+            echo '<h2>' . $record->title . '<span>Created by ' . $record->name . ' on  ' . $myDate->format("F j, Y") . '</span></h2>';
             echo '<p>' . $record->message . '</p>';
             echo '</div>';
         }
         ?>
+        <script>
+            document.getElementById('mySimpleBlogForm').className = ' hideForm'; // Hide Form at Start:
+            /** 
+             * @param eid, Id of the element to change.
+             * @param myclass, Class name to toggle.
+             **/
+            function toggleClass(eid, myclass) {
+                var theEle = document.getElementById(eid);
+                var eClass = theEle.className;
+
+                if (eClass.indexOf(myclass) >= 0) {
+                    // we already have this element hidden so remove the class.
+                    theEle.className = eClass.replace(myclass, '');
+                } else {
+                    // add the class. 
+                    theEle.className += ' ' + myclass;
+                }
+            }
+        </script>
     </body>
 </html>

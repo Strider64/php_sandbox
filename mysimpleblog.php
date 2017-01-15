@@ -76,7 +76,7 @@ $result = $stmt->execute();
         <link rel="stylesheet" href="lib/css/mysimpleblog.css">
     </head>
     <body>
-        <button class="addBlog" onclick="toggleClass('mySimpleBlogForm', 'hideForm');">Add to Blog</button>
+        <button id="myButton" class="addBlog" onclick="toggleClass('mySimpleBlogForm', 'hideForm');">Show Blog Form</button>
         <div id="mySimpleBlogForm" class="container">
             <form id="searchForm" action="mysimpleblog.php" method="post">
                 <label for="name">Name</label>
@@ -112,10 +112,12 @@ $result = $stmt->execute();
 
                 if (eClass.indexOf(myclass) >= 0) {
                     // we already have this element hidden so remove the class.
-                    theEle.className = eClass.replace(myclass, '');
+                    theEle.className = eClass.replace(myclass, ''); 
+                    document.getElementById('myButton').childNodes[0].nodeValue = "Hide Blog Form";
                 } else {
                     // add the class. 
                     theEle.className += ' ' + myclass;
+                    document.getElementById('myButton').childNodes[0].nodeValue = "Show Blog Form";
                 }
             }
         </script>

@@ -70,7 +70,7 @@ $result = $stmt->execute();
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Contact Form</title>
+        <title>My Simple Blog</title>
         <link rel="stylesheet" href="lib/css/reset.css">
         <link rel="stylesheet" href="lib/css/grids.css">
         <link rel="stylesheet" href="lib/css/mysimpleblog.css">

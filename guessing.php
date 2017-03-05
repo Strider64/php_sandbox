@@ -34,7 +34,6 @@ if (filter_has_var(INPUT_POST, "guess")) {
                 break;
             case 0:
                 $message = "Congratulations! You guessed the hidden number!";
-                unset($random);
                 break;
             case 1:
                 $message = "Your guess " . $guess . " was way to high.";
